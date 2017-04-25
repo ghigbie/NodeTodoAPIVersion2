@@ -12,11 +12,10 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp", (err, db) => {
         completed: false
     }, (err, result) => {
         if(err){
-            console.log("Unable to insert todo");
-            return console.log(err);
+            return console.log("Unable to insert todo", err);
         }
-        console.log("TODO inserted!!!");
-    })
+        console.log(JSON.stringify(result.opps, undefined, 2));
+    });
 
     db.close();
 });
