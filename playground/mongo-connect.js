@@ -1,7 +1,4 @@
-const MongoClient = require("mongodb").MongoClient;
-let user = {name: "andrew", age: 25};
-let {name} = user; //destructuring
-console.log(name);
+const {MongoClient} = require("mongodb");
 
 
 MongoClient.connect("mongodb://localhost:27017/TodoApp", (err, db) => {
