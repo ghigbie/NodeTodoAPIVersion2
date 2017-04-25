@@ -13,15 +13,15 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp", (err, db) => {
     //     console.log("Unable to fetch todos", err);
     // });
 
-    db.collection("Users").find({name: "Mike"}).count().then((count) => {
-        console.log(`Users count: ${count}`);
-    }, (err) => {
-        console.log("Unable to fetch users", err);
-    });
+    // db.collection("Users").find({name: "Mike"}).count().then((count) => {
+    //     console.log(`Users count: ${count}`);
+    // }, (err) => {
+    //     console.log("Unable to fetch users", err);
+    // });
 
-    db.collection("Users").find({name: "Paul").toArray().then((docs) => {
-        console.log(`Users with the name you are looking for:`);
-        console.log(JOSN.stringify(docs, undefined, 2));
+    db.collection("Users").find({name: "Paul"}).toArray().then((docs) => {
+        console.log(`Users with the names you are looking for:`);
+        console.log(JSON.stringify(docs, undefined, 2));
     }, (err) => {
         console.log("Unable to fetch users", err);
     });
