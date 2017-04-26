@@ -12,7 +12,9 @@ MongoClient.connect("mongodb://localhost:27017/TodoApp", (err, db) => {
     });
 
     //deleteOne()
-
+    db.collection("Todos").deleteOne({text: "Pet cat"}).then((result) => {
+        console.log(result);
+    });
 
     //findOneAndDelete()
 
