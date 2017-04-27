@@ -16,14 +16,27 @@ let Todo = mongoose.model("Todo", {
 });
 
 let newTodo = new Todo({
-    text: "Cook lunch for me!",
+    text: "Cook dinner for me!",
     completed: false,
+});
+
+let newTodo1 = new Todo({
+    text: "Walk the doggie!!!",
+    completed: false,
+    completedAt: 12
 });
 
 newTodo.save().then((doc) => {
     console.log("Saved todo", doc);
 }, (e) => {
     console.log("Unable to save todo.");
+});
+
+newTodo1.save().then((doc) => {
+    console.log("Saved todo", doc);
+}, (e) => {
+    console.log("Unable to save todo");
+    console.log(e);
 });
 
 let User = mongoose.model("User", {
@@ -33,4 +46,4 @@ let User = mongoose.model("User", {
     age:{
         type: Number
     },
-})
+});
