@@ -14,3 +14,23 @@ let Todo = mongoose.model("Todo", {
         type: Number
     }
 });
+
+let newTodo = new Todo({
+    text: "Cook lunch for me!",
+    completed: false,
+})
+
+newTodo.save().then((doc) => {
+    console.log("Saved todo", doc);
+}, (e) => {
+    console.log("Unable to save todo.");
+});
+
+let User = mongoose.model("User", {
+    name:{
+        type: String
+    },
+    age:{
+        type: Number
+    },
+})
