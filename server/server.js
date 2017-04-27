@@ -7,6 +7,16 @@ const {mongoose} = require("./db/mongoose"),
       {Todo}     = require("./models/todo"),
       {User}     = require("./models/user");
 
+app.use(bodyParser.json());//this middleware allows JSON to be sent to express application
+
+app.post("/todos", (req, res) => {
+    console.log(req.body);
+});
+
+app.get("*", (req, res) => {
+    res.send("<h1>This page cannot be found</h1>");
+});
+
 let port = 3000
 app.listen(port, () => {
     console.log(`Server is listening on ${port}`);
