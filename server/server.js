@@ -43,7 +43,6 @@ newTodo1.save().then((doc) => {
     console.log(e);
 });
 
-
 let User = mongoose.model("User", {
     email: {
         type: String,
@@ -51,4 +50,15 @@ let User = mongoose.model("User", {
         trim: true,
         minlength: 1
     }
+});
+
+let newUser = new User({
+    email: "bob@bob.com"
+});
+
+newUser.save().then((doc) => {
+    console.log("Saved user", doc);
+}, (e) => {
+    console.log("Unable to save user");
+    console.log(e);
 });
