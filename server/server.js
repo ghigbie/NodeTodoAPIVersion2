@@ -8,7 +8,7 @@ let Todo = mongoose.model("Todo", {
         type: String
     },
     completed:{
-        type: boolean
+        type: Boolean
     },
     completedAt:{
         type: Number
@@ -18,7 +18,7 @@ let Todo = mongoose.model("Todo", {
 let newTodo = new Todo({
     text: "Cook lunch for me!",
     completed: false,
-})
+});
 
 newTodo.save().then((doc) => {
     console.log("Saved todo", doc);
