@@ -1,6 +1,11 @@
-const {mongoose} = require("./db/mongoose");
-const {Todo} = require("./models/todo");
-const {User} = require("./models/user");
+const express    = require("express"),
+      bodyParser = require("body-parser"),
+      app        = express();
+
+//local imports
+const {mongoose} = require("./db/mongoose"),
+      {Todo}     = require("./models/todo"),
+      {User}     = require("./models/user");
 
 
 // let Todo = mongoose.model("Todo", {
