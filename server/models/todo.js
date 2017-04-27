@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 
 let Todo = mongoose.model("Todo", {
     text: {
@@ -14,3 +15,5 @@ let Todo = mongoose.model("Todo", {
         type: Number
     }
 });
+
+module.exports = {Todo};
