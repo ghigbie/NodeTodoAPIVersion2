@@ -7,6 +7,10 @@ const {mongoose} = require("./db/mongoose"),
       {Todo}     = require("./models/todo"),
       {User}     = require("./models/user");
 
+let port = 3000
+app.listen(port, () => {
+    console.log(`Server is listening on ${port}`);
+});
 
 // let Todo = mongoose.model("Todo", {
 //     text: {
