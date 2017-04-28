@@ -33,6 +33,8 @@ app.listen(port, () => {
     console.log(`Server is listening on ${port}.`);
 });
 
+module.exports = {app}; //use E6 export statement
+
 // let Todo = mongoose.model("Todo", {
 //     text: {
 //         type: String,
