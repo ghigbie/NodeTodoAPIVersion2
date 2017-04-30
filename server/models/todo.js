@@ -1,32 +1,14 @@
 const mongoose = require("mongoose");
-//const Schema   =  mongoose.Schema;
+const Schema   =  mongoose.Schema;
 
-// let todoSchema = new Schema({
-//     text: {
-//         type: String,
-//         required: true,
-//         trim: true,
-//         minlength: 1
-//     },
-//     completed: {
-//         type: Boolean,
-//         default: false
-//     },
-//     completedAt:{
-//         type: Number
-//     }
-// });
-//
-// let Todo = mongoose.model("Todo", todoSchema);
-
-let Todo = mongoose.model("Todo", {
+let todoSchema = new Schema({
     text: {
         type: String,
         required: true,
         trim: true,
         minlength: 1
     },
-    completed:{
+    completed: {
         type: Boolean,
         default: false
     },
@@ -34,5 +16,23 @@ let Todo = mongoose.model("Todo", {
         type: Number
     }
 });
+
+let Todo = mongoose.model("Todo", todoSchema);
+
+// let Todo = mongoose.model("Todo", {
+//     text: {
+//         type: String,
+//         required: true,
+//         trim: true,
+//         minlength: 1
+//     },
+//     completed:{
+//         type: Boolean,
+//         default: false
+//     },
+//     completedAt:{
+//         type: Number
+//     }
+// });
 
 module.exports = {Todo};
