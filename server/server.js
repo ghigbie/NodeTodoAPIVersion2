@@ -24,9 +24,9 @@ app.post("/todos", (req, res) => {
     console.log(req.body);
 });
 
-// app.get("*", (req, res) => {
-//     res.send("<h1>This page cannot be found</h1>");
-// });
+app.get("*", (req, res) => {
+    res.send("<h1>This page cannot be found</h1>");
+});
 
 let port = 3000
 app.listen(port, () => {
