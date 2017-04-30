@@ -13,19 +13,16 @@ app.post("/todos", (req, res) => {
     let todo = new Todo({
         text: req.body.text
     });
-    todo.save().then((doc) => {
+
+    todo.save().then((doc) =>{
         res.send(doc);
-        console.log("The todo was saved: ", doc);
+        console.log("The todo was saved!!! ", todo);
     }, (e) => {
         res.status(400).send(e);
         console.log("There was an error: ", e);
     });
-    //console.log(req.body);
 });
 
-// app.get("*", (req, res) => {
-//     res.send("<h1>This page cannot be found</h1>");
-// });
 
 let port = 3000
 app.listen(port, () => {
