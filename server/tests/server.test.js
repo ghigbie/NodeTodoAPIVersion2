@@ -5,6 +5,9 @@ const expect    = require("expect"),
 const {app}  = require("./../server"),
       {Todo} = require("./../models/todo");
 
+beforeEach((done) => {
+    Todo.remove({}).then(() => done());
+});
 
 describe("POST /todos", () => {
     it("should create a new todo", (done) => {
