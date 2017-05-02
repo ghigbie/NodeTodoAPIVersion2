@@ -23,10 +23,9 @@ app.post("/todos", (req, res) => {
     });
 });
 
-
 let port = 3000
-app.listen(port, () => {
-    console.log(`Server is listening on ${port}.`);
+app.listen(port, process.env.IP, () => {
+    console.log(`Server is up and listening on ${port}.`);
 });
 
 module.exports = {app}; //use E6 export statement
