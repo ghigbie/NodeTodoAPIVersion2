@@ -1,11 +1,11 @@
-const express    = require("express"),
-      bodyParser = require("body-parser"),
-      app        = express();
+const express = require("express");
+const bodyParser = require("body-parser");
 
-//local imports
-const {mongoose} = require("./db/mongoose"),
-      {Todo}     = require("./models/todo"),
-      {User}     = require("./models/user");
+const {mongoose} = require("./db/mongoose");
+const {Todo} = require("./models/todo");
+const {User} = require("./models/user");
+
+const app = express();
 
 app.use(bodyParser.json());//this middleware allows JSON to be sent to express application
 
@@ -20,6 +20,15 @@ app.post("/todos", (req, res) => {
     }, (e) => {
         res.status(400).send(e);
         console.log("There was an error: ", e);
+    });
+});
+
+app.get("/todos", (req, res) => {
+    Todo.find().then((todos) => {
+        res.send({todos}); //sending an objec instead of an array allows for more flexibility
+    }, (e) => {
+        res.status(400).send(e);
+        console.log("There was an error: ", e); 
     });
 });
 
