@@ -13,7 +13,8 @@ let todoSchema = new Schema({
         default: false
     },
     completedAt:{
-        type: Number
+        type: Number,
+        default: null
     }
 });
 
